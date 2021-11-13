@@ -40,7 +40,7 @@ class Node:
       if self.right:
          self.right.traversal_print()
 
-   def deleteDeepest(root,d_node):
+   def deepDelete(root,d_node):
        q = []
        q.append(root)
        while(len(q)):
@@ -69,7 +69,7 @@ class Node:
 
   
 # function to delete element in binary tree
-   def deletion(root, key):
+   def delete(root, key):
        if root == None :
            return None 
        if root.left == None and root.right == None and root.mid == None:
@@ -94,7 +94,7 @@ class Node:
                q.append(temp.mid)
        if key_node :
            x = temp.data
-           deleteDeepest(root,temp)
+           deepDelete(root,temp)
            key_node.data = x
        return root
 
@@ -105,5 +105,5 @@ root.insert(45)
 root.insert(32)
 
 root.traversal_print()
-root.deletion(45)
+root.delete(45)
 root.traversal_print()
